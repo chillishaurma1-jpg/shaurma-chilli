@@ -6,7 +6,7 @@
     <title>Шаурма Chilli - доставка и самовывоз в Краснодаре</title>
     <meta name="description" content="Шаурма Chilli в Краснодаре: доставка, самовывоз, адреса точек, меню, соцсети и контакты.">
     <link rel="icon" type="image/png" href="assets/favicon.png">
-    <link rel="preload" as="image" href="assets/hero-combo-table.webp">
+    <link rel="preload" as="image" href="assets/hero-cover-1.png">
     <link rel="stylesheet" href="style.css">
 
     <!-- Yandex.Metrika counter -->
@@ -38,8 +38,9 @@
       </nav>
 
       <div class="hero-grid">
-        <div class="hero-visual" aria-hidden="true">
-          <img src="assets/hero-combo-table.webp" alt="">
+        <div class="hero-visual" data-hero-carousel aria-hidden="true">
+          <img data-hero-image src="assets/hero-cover-1.png" alt="">
+          <div class="hero-dots" data-hero-dots></div>
         </div>
 
         <section class="hero-copy hero-overlay" aria-label="Быстрый заказ">
@@ -56,6 +57,8 @@
             </div>
           </div>
         </section>
+        <button class="side-nav hero-nav hero-nav-prev" type="button" data-hero-direction="-1" aria-label="Предыдущее фото"><span aria-hidden="true">‹</span></button>
+        <button class="side-nav hero-nav hero-nav-next" type="button" data-hero-direction="1" aria-label="Следующее фото"><span aria-hidden="true">›</span></button>
 
       </div>
     </header>
@@ -68,9 +71,13 @@
             В Яндекс Еде цена выше из-за комиссии сервиса.
           </p>
         </div>
-        <div class="menu-toolbar" aria-label="Категории меню">
-          <button class="menu-filter is-active" type="button" data-category="popular">Популярное</button>
-          <button class="menu-filter" type="button" data-category="all">Всё</button>
+        <div class="menu-toolbar-frame">
+          <button class="side-nav menu-nav menu-nav-prev" type="button" data-menu-scroll="-1" aria-label="Предыдущие категории"><span aria-hidden="true">‹</span></button>
+          <div class="menu-toolbar" aria-label="Категории меню">
+            <button class="menu-filter is-active" type="button" data-category="popular">Популярное</button>
+            <button class="menu-filter" type="button" data-category="all">Всё</button>
+          </div>
+          <button class="side-nav menu-nav menu-nav-next" type="button" data-menu-scroll="1" aria-label="Следующие категории"><span aria-hidden="true">›</span></button>
         </div>
         <div class="menu-list" id="menuList" aria-live="polite"></div>
       </section>
@@ -129,23 +136,23 @@
         <div class="section-heading">
           <h2 class="section-title-accent" id="reviews-title">Отзывы гостей</h2>
         </div>
-        <div class="reviews-carousel" aria-label="Карусель отзывов">
-          <article class="review-slide">
-            <img src="assets/review-zapadny-45.webp" alt="Отзыв гостя Chilli на точке Западный обход, 45" loading="lazy">
-          </article>
-          <article class="review-slide">
-            <img src="assets/review-krasnyh-1.webp" alt="Отзыв гостя Chilli на точке Красных Партизан, 1/3" loading="lazy">
-          </article>
-          <article class="review-slide">
-            <img src="assets/review-nevkipelogo-1.webp" alt="Отзыв гостя Chilli на точке Невкипелого" loading="lazy">
-          </article>
-          <article class="review-slide">
-            <img src="assets/review-nevkipelogo-2.webp" alt="Еще один отзыв гостя Chilli на точке Невкипелого" loading="lazy">
-          </article>
-        </div>
-        <div class="review-controls" aria-label="Листать отзывы">
-          <button class="review-nav" type="button" data-review-direction="-1" aria-label="Предыдущий отзыв">‹</button>
-          <button class="review-nav" type="button" data-review-direction="1" aria-label="Следующий отзыв">›</button>
+        <div class="reviews-frame" data-reviews-frame>
+          <button class="side-nav review-nav review-nav-prev" type="button" data-review-direction="-1" aria-label="Предыдущий отзыв"><span aria-hidden="true">‹</span></button>
+          <div class="reviews-carousel" aria-label="Карусель отзывов">
+            <article class="review-slide">
+              <img src="assets/review-zapadny-45.webp" alt="Отзыв гостя Chilli на точке Западный обход, 45" loading="lazy">
+            </article>
+            <article class="review-slide">
+              <img src="assets/review-krasnyh-1.webp" alt="Отзыв гостя Chilli на точке Красных Партизан, 1/3" loading="lazy">
+            </article>
+            <article class="review-slide">
+              <img src="assets/review-nevkipelogo-1.webp" alt="Отзыв гостя Chilli на точке Невкипелого" loading="lazy">
+            </article>
+            <article class="review-slide">
+              <img src="assets/review-nevkipelogo-2.webp" alt="Еще один отзыв гостя Chilli на точке Невкипелого" loading="lazy">
+            </article>
+          </div>
+          <button class="side-nav review-nav review-nav-next" type="button" data-review-direction="1" aria-label="Следующий отзыв"><span aria-hidden="true">›</span></button>
         </div>
       </section>
 
@@ -187,10 +194,10 @@
 
       <section class="section campaign" aria-labelledby="campaign-title">
         <div>
-          <h2 id="campaign-title">Мы рядом, когда город стоит</h2>
+          <h2 class="section-title-accent" id="campaign-title">Мы рядом, когда город стоит</h2>
         </div>
         <p>
-          Раздаём компоты водителям в очередях и знакомим с Chilli. Если стало чуть легче ждать -
+          Раздаём напитки водителям в очередях и знакомим с Chilli. Если стало чуть легче ждать -
           мы рады, что смогли вам помочь.
         </p>
       </section>
