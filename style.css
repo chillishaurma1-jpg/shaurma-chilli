@@ -360,7 +360,7 @@ h2 {
 
 .order-card {
   flex-direction: column;
-  gap: 5px;
+  gap: 4px;
   border: 1px solid rgba(248, 183, 18, 0.46);
   background:
     linear-gradient(180deg, rgba(255, 239, 221, 0.1), rgba(255, 239, 221, 0.02)),
@@ -382,16 +382,17 @@ h2 {
 .order-card span {
   font-family: var(--font-display);
   text-transform: uppercase;
-  font-size: 1.02rem;
+  font-size: 1.1rem;
+  line-height: 1;
   text-shadow: inherit;
 }
 
 .order-card small {
   color: currentColor;
   opacity: 1;
-  font-size: 0.68rem;
+  font-size: 0.76rem;
   font-weight: 600;
-  line-height: 1.12;
+  line-height: 1.08;
   text-shadow: inherit;
 }
 
@@ -492,46 +493,6 @@ h2 {
   scrollbar-width: thin;
   scroll-behavior: smooth;
   touch-action: pan-x pan-y;
-}
-
-.menu-toolbar-frame {
-  position: relative;
-}
-
-.menu-toolbar-frame::before,
-.menu-toolbar-frame::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 12px;
-  z-index: 2;
-  width: 34px;
-  pointer-events: none;
-}
-
-.menu-toolbar-frame::before {
-  left: 0;
-  background: linear-gradient(90deg, var(--bg) 0%, rgba(29, 29, 30, 0) 100%);
-}
-
-.menu-toolbar-frame::after {
-  right: 0;
-  background: linear-gradient(270deg, var(--bg) 0%, rgba(29, 29, 30, 0) 100%);
-}
-
-.menu-nav {
-  top: calc(50% - 6px);
-  width: 26px;
-  height: 34px;
-  opacity: 0.24;
-}
-
-.menu-nav-prev {
-  left: -2px;
-}
-
-.menu-nav-next {
-  right: -2px;
 }
 
 .menu-toolbar::-webkit-scrollbar,
@@ -1058,12 +1019,12 @@ body.menu-photo-modal-open {
   }
 
   .order-card span {
-    font-size: 0.96rem;
+    font-size: 1.04rem;
   }
 
   .order-card small {
-    font-size: 0.66rem;
-    line-height: 1.15;
+    font-size: 0.72rem;
+    line-height: 1.08;
     max-width: 110px;
     text-align: center;
   }

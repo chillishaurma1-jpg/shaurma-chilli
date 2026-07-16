@@ -278,30 +278,6 @@ function bindFilters() {
   });
 }
 
-function bindMenuToolbarControls() {
-  const toolbar = document.querySelector(".menu-toolbar");
-  const buttons = document.querySelectorAll("[data-menu-scroll]");
-  if (!toolbar || buttons.length === 0) return;
-
-  buttons.forEach((button) => {
-    button.addEventListener("click", () => {
-      const direction = Number(button.dataset.menuScroll);
-      const start = toolbar.scrollLeft;
-      const maxScroll = toolbar.scrollWidth - toolbar.clientWidth;
-      const target = Math.max(0, Math.min(maxScroll, start + direction * Math.round(toolbar.clientWidth * 0.72)));
-      toolbar.scrollTo({
-        left: target,
-        behavior: "smooth",
-      });
-      window.setTimeout(() => {
-        if (Math.abs(toolbar.scrollLeft - start) < 2) {
-          toolbar.scrollLeft = target;
-        }
-      }, 180);
-    });
-  });
-}
-
 function bindHeroCarousel() {
   const carousel = document.querySelector("[data-hero-carousel]");
   const swipeArea = carousel?.closest(".hero-grid") || carousel;
@@ -555,7 +531,6 @@ bindHeroCarousel();
 renderFilters();
 renderMenu("popular");
 bindFilters();
-bindMenuToolbarControls();
 bindReviewControls();
 bindMenuPhotoModal();
 
