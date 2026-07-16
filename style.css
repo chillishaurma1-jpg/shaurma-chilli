@@ -360,7 +360,7 @@ h2 {
 
 .order-card {
   flex-direction: column;
-  gap: 4px;
+  gap: 5px;
   border: 1px solid rgba(248, 183, 18, 0.46);
   background:
     linear-gradient(180deg, rgba(255, 239, 221, 0.1), rgba(255, 239, 221, 0.02)),
@@ -382,17 +382,16 @@ h2 {
 .order-card span {
   font-family: var(--font-display);
   text-transform: uppercase;
-  font-size: 1.1rem;
-  line-height: 1;
+  font-size: 1.02rem;
   text-shadow: inherit;
 }
 
 .order-card small {
   color: currentColor;
   opacity: 1;
-  font-size: 0.76rem;
+  font-size: 0.68rem;
   font-weight: 600;
-  line-height: 1.08;
+  line-height: 1.12;
   text-shadow: inherit;
 }
 
@@ -1019,12 +1018,12 @@ body.menu-photo-modal-open {
   }
 
   .order-card span {
-    font-size: 1.04rem;
+    font-size: 0.96rem;
   }
 
   .order-card small {
-    font-size: 0.72rem;
-    line-height: 1.08;
+    font-size: 0.66rem;
+    line-height: 1.15;
     max-width: 110px;
     text-align: center;
   }
