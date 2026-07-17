@@ -304,9 +304,13 @@ h2 {
   line-height: 0.88;
 }
 
-.hero-nav,
-.review-nav {
+.hero-nav {
   top: 50%;
+  transform: translateY(-50%);
+}
+
+.review-nav {
+  top: 50px;
   transform: translateY(-50%);
 }
 
