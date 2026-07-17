@@ -1,8 +1,8 @@
 ﻿/*
-  Р“РґРµ РјРµРЅСЏС‚СЊ РґР°РЅРЅС‹Рµ:
-  1. РЎСЃС‹Р»РєРё РјРµРЅСЏСЋС‚СЃСЏ РІ РѕР±СЉРµРєС‚Рµ LINKS.
-  2. РњРµРЅСЋ Рё С†РµРЅС‹ РјРµРЅСЏСЋС‚СЃСЏ РІ РјР°СЃСЃРёРІРµ MENU.
-  3. Р¤РѕС‚Рѕ Р±Р»СЋРґ РјРµРЅСЏСЋС‚СЃСЏ РІ РїРѕР»Рµ image. Р¤Р°Р№Р»С‹ Р»РµР¶Р°С‚ РІ assets.
+  Где менять данные:
+  1. Ссылки меняются в объекте LINKS.
+  2. Меню и цены меняются в массиве MENU.
+  3. Фото блюд меняются в поле image. Файлы лежат в assets.
 */
 const LINKS = {
   delivery: "https://eda.yandex.ru/r/saurma_chilli",
@@ -24,17 +24,17 @@ const LINK_GOALS = {
 };
 
 const MENU = [
-  { name: "Шаурма Большая", subtitle: "", volume: "490 гр", category: "Шаурма", pickupPrice: 290, deliveryPrice: 450, image: "assets/menu-shaurma-big-card.webp" },
-  { name: "Шаурма Мини", subtitle: "", volume: "350 гр", category: "Шаурма", pickupPrice: 240, deliveryPrice: 370, image: "assets/menu-shaurma-mini-card.webp" },
-  { name: "Шаурма Большая", subtitle: "В сырном лаваше", volume: "490 гр", category: "Шаурма", pickupPrice: 300, deliveryPrice: 465, image: "assets/menu-shaurma-big-cheese-card.webp" },
-  { name: "Шаурма Мини", subtitle: "В сырном лаваше", volume: "350 гр", category: "Шаурма", pickupPrice: 250, deliveryPrice: 385, image: "assets/menu-shaurma-mini-cheese-card.webp" },
-  { name: "Донар", subtitle: "", volume: "485 гр", category: "Донар", pickupPrice: 320, deliveryPrice: 495, image: "assets/menu-donar-card.webp" },
-  { name: "Донар", subtitle: "на Тарелке", volume: "500 гр", category: "Донар", pickupPrice: 350, deliveryPrice: 540, image: "assets/menu-donar-plate-card.webp" },
-  { name: "Гирос", subtitle: "Фирменный", volume: "410 гр", category: "Прочее", pickupPrice: 320, deliveryPrice: 495, image: "assets/menu-gyros-card.webp" },
-  { name: "Фахитос", subtitle: "", volume: "400 гр", category: "Прочее", pickupPrice: 320, deliveryPrice: 495, image: "assets/menu-fajitos-card.webp" },
-  { name: "Хот-Дог", subtitle: "", volume: "265 гр", category: "Прочее", pickupPrice: 240, deliveryPrice: 370, image: "assets/menu-hot-dog-card.webp" },
-  { name: "Скепасти", subtitle: "", volume: "530 гр", category: "Прочее", pickupPrice: 400, deliveryPrice: 620, image: "assets/menu-skepasti-card.webp" },
-  { name: "Сендвич", subtitle: "", volume: "310 гр", category: "Прочее", pickupPrice: 320, deliveryPrice: 495, image: "assets/menu-sandwich-card.webp" },
+  { name: "Шаурма Большая", subtitle: "", volume: "490 гр", category: "Шаурма", pickupPrice: 300, deliveryPrice: 465, image: "assets/menu-shaurma-big-card.webp" },
+  { name: "Шаурма Мини", subtitle: "", volume: "350 гр", category: "Шаурма", pickupPrice: 250, deliveryPrice: 385, image: "assets/menu-shaurma-mini-card.webp" },
+  { name: "Шаурма Большая", subtitle: "В сырном лаваше", volume: "490 гр", category: "Шаурма", pickupPrice: 310, deliveryPrice: 480, image: "assets/menu-shaurma-big-cheese-card.webp" },
+  { name: "Шаурма Мини", subtitle: "В сырном лаваше", volume: "350 гр", category: "Шаурма", pickupPrice: 260, deliveryPrice: 400, image: "assets/menu-shaurma-mini-cheese-card.webp" },
+  { name: "Донар", subtitle: "", volume: "485 гр", category: "Донар", pickupPrice: 330, deliveryPrice: 510, image: "assets/menu-donar-card.webp" },
+  { name: "Донар", subtitle: "на Тарелке", volume: "500 гр", category: "Донар", pickupPrice: 360, deliveryPrice: 555, image: "assets/menu-donar-plate-card.webp" },
+  { name: "Гирос", subtitle: "Фирменный", volume: "410 гр", category: "Прочее", pickupPrice: 330, deliveryPrice: 510, image: "assets/menu-gyros-card.webp" },
+  { name: "Фахитос", subtitle: "", volume: "400 гр", category: "Прочее", pickupPrice: 330, deliveryPrice: 510, image: "assets/menu-fajitos-card.webp" },
+  { name: "Хот-Дог", subtitle: "", volume: "265 гр", category: "Прочее", pickupPrice: 250, deliveryPrice: 385, image: "assets/menu-hot-dog-card.webp" },
+  { name: "Скепасти", subtitle: "", volume: "530 гр", category: "Прочее", pickupPrice: 410, deliveryPrice: 635, image: "assets/menu-skepasti-card.webp" },
+  { name: "Сендвич", subtitle: "", volume: "310 гр", category: "Прочее", pickupPrice: 330, deliveryPrice: 510, image: "assets/menu-sandwich-card.webp" },
   { name: "Картошка Фри", subtitle: "", volume: "110 гр", category: "Закуски", pickupPrice: 150, deliveryPrice: 235, image: "assets/menu-fries-card.webp" },
   { name: "Нагетсы", subtitle: "", volume: "110 гр", category: "Закуски", pickupPrice: 150, deliveryPrice: 235, image: "assets/menu-nuggets-card.webp" },
   { name: "Сыр", subtitle: "Слайс", volume: "20 гр", category: "Добавки", pickupPrice: 30, deliveryPrice: 45, image: "assets/menu-cheese-card.webp" },
@@ -53,7 +53,7 @@ const MENU = [
   { name: "Тан Чили", subtitle: "Домашний", volume: "0,5 л", category: "Напитки", pickupPrice: 110, deliveryPrice: 170, image: "assets/menu-tan-card.webp" },
   { name: "Добрый Кола", subtitle: "", volume: "1 л", category: "Напитки", pickupPrice: 150, deliveryPrice: 235, image: "assets/menu-dobry-cola-1l-card.webp" },
   { name: "Добрый Кола", subtitle: "", volume: "0,5 л", category: "Напитки", pickupPrice: 100, deliveryPrice: 155, image: "assets/menu-dobry-cola-05-card.webp" },
-  { name: "Добрый Кола", subtitle: "", volume: "0,33 л", category: "Напитки", pickupPrice: 80, deliveryPrice: 125, image: "assets/menu-dobry-cola-033-card.webp" },
+  { name: "Добрый Кола", subtitle: "", volume: "0,33 л", category: "Напитки", pickupPrice: 90, deliveryPrice: 140, image: "assets/menu-dobry-cola-033-card.webp" },
   { name: "Добрый Кола Б/С", subtitle: "", volume: "0,5 л", category: "Напитки", pickupPrice: 100, deliveryPrice: 155, image: "assets/menu-dobry-cola-zero-05-card.webp" },
   { name: "Добрый Апельсин", subtitle: "", volume: "1 л", category: "Напитки", pickupPrice: 150, deliveryPrice: 235, image: "assets/menu-dobry-orange-1l-card.webp" },
   { name: "Добрый Апельсин", subtitle: "", volume: "0,5 л", category: "Напитки", pickupPrice: 100, deliveryPrice: 155, image: "assets/menu-dobry-orange-05-card.webp" },
@@ -494,7 +494,7 @@ function bindMenuPhotoModal() {
     const button = event.target.closest("[data-menu-photo]");
     if (button) {
       modalImage.src = button.dataset.menuPhoto;
-      modalImage.alt = button.dataset.menuPhotoAlt || "Р¤РѕС‚Рѕ Р±Р»СЋРґР°";
+      modalImage.alt = button.dataset.menuPhotoAlt || "Фото блюда";
       modal.setAttribute("aria-hidden", "false");
       document.body.classList.add("menu-photo-modal-open");
       return;
