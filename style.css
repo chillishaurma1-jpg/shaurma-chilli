@@ -310,8 +310,9 @@ h2 {
 }
 
 .review-nav {
-  top: 50px;
-  transform: translateY(-50%);
+  top: auto;
+  bottom: 22px;
+  transform: none;
 }
 
 .hero-nav-prev,
@@ -907,7 +908,7 @@ body.menu-photo-modal-open {
 }
 
 .review-nav:active {
-  transform: translateY(-50%) scale(0.98);
+  transform: scale(0.98);
 }
 
 .quick-links {
