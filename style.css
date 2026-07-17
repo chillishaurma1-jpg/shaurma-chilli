@@ -310,8 +310,8 @@ h2 {
 }
 
 .review-nav {
-  top: auto;
-  bottom: 22px;
+  top: 74px;
+  bottom: auto;
   transform: none;
 }
 
