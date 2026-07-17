@@ -24,60 +24,60 @@ const LINK_GOALS = {
 };
 
 const MENU = [
-  { name: "Шаурма Большая", subtitle: "", category: "Шаурма", pickupPrice: 290, deliveryPrice: 450, image: "assets/menu-shaurma-big.png" },
-  { name: "Шаурма Мини", subtitle: "", category: "Шаурма", pickupPrice: 240, deliveryPrice: 370, image: "assets/menu-shaurma-mini.png" },
-  { name: "Шаурма Большая", subtitle: "В сырном лаваше", category: "Шаурма", pickupPrice: 300, deliveryPrice: 465, image: "assets/menu-shaurma-big-cheese.png" },
-  { name: "Шаурма Мини", subtitle: "В сырном лаваше", category: "Шаурма", pickupPrice: 250, deliveryPrice: 385, image: "assets/menu-shaurma-mini-cheese.png" },
-  { name: "Донар", subtitle: "", category: "Донар", pickupPrice: 320, deliveryPrice: 495, image: "assets/menu-donar.png" },
-  { name: "Донар", subtitle: "на Тарелке", category: "Донар", pickupPrice: 350, deliveryPrice: 540, image: "assets/menu-donar-plate.png" },
-  { name: "Гирос", subtitle: "Фирменный", category: "Прочее", pickupPrice: 320, deliveryPrice: 495, image: "assets/menu-gyros.png" },
-  { name: "Фахитос", subtitle: "", category: "Прочее", pickupPrice: 320, deliveryPrice: 495, image: "assets/menu-fajitos.png" },
-  { name: "Хот-Дог", subtitle: "", category: "Прочее", pickupPrice: 240, deliveryPrice: 370, image: "assets/menu-hot-dog.png" },
-  { name: "Скепасти", subtitle: "", category: "Прочее", pickupPrice: 400, deliveryPrice: 620, image: "assets/menu-skepasti.png" },
-  { name: "Сендвич", subtitle: "", category: "Прочее", pickupPrice: 320, deliveryPrice: 495, image: "assets/menu-sandwich.png" },
-  { name: "Картошка Фри", subtitle: "", category: "Закуски", pickupPrice: 150, deliveryPrice: 235, image: "assets/menu-fries.png" },
-  { name: "Нагетсы", subtitle: "", category: "Закуски", pickupPrice: 150, deliveryPrice: 235, image: "assets/menu-nuggets.png" },
-  { name: "Сыр", subtitle: "Слайс", category: "Добавки", pickupPrice: 30, deliveryPrice: 45, image: "assets/menu-cheese.png" },
-  { name: "Лук", subtitle: "Маринованный", category: "Добавки", pickupPrice: 30, deliveryPrice: 45, image: "assets/menu-onion.png" },
-  { name: "Огурец", subtitle: "Солёный", category: "Добавки", pickupPrice: 30, deliveryPrice: 45, image: "assets/menu-pickle.png" },
-  { name: "Перец", subtitle: "Халапеньо", category: "Добавки", pickupPrice: 30, deliveryPrice: 45, image: "assets/menu-jalapeno.png" },
-  { name: "Грибы", subtitle: "Шампиньоны", category: "Добавки", pickupPrice: 30, deliveryPrice: 45, image: "assets/menu-mushrooms.png" },
-  { name: "Мясо", subtitle: "Филе куриное", category: "Добавки", pickupPrice: 100, deliveryPrice: 150, image: "assets/menu-meat.png" },
-  { name: "Кетчуп", subtitle: "", category: "Соусы", pickupPrice: 50, deliveryPrice: 65, image: "assets/menu-ketchup.png" },
-  { name: "Сырный соус", subtitle: "", category: "Соусы", pickupPrice: 50, deliveryPrice: 65, image: "assets/menu-cheese-sauce.png" },
-  { name: "Чесночный соус", subtitle: "", category: "Соусы", pickupPrice: 50, deliveryPrice: 65, image: "assets/menu-garlic-sauce.png" },
-  { name: "Кофе", subtitle: "", category: "Напитки", pickupPrice: 50, deliveryPrice: null, image: "assets/menu-coffee.png" },
-  { name: "Чай", subtitle: "", category: "Напитки", pickupPrice: 50, deliveryPrice: null, image: "assets/menu-tea.png" },
-  { name: "Компот Чили", subtitle: "Ягоды", category: "Напитки", pickupPrice: 90, deliveryPrice: 140, image: "assets/menu-compot-berries.png" },
-  { name: "Компот Чили", subtitle: "Сухофрукты", category: "Напитки", pickupPrice: 90, deliveryPrice: 140, image: "assets/menu-compot-dried-fruits.png" },
-  { name: "Тан Чили", subtitle: "Домашний", category: "Напитки", pickupPrice: 110, deliveryPrice: 170, image: "assets/menu-tan.png" },
-  { name: "Добрый Кола", subtitle: "", category: "Напитки", pickupPrice: 150, deliveryPrice: 235, image: "assets/menu-dobry-cola-1l.png" },
-  { name: "Добрый Кола", subtitle: "", category: "Напитки", pickupPrice: 100, deliveryPrice: 155, image: "assets/menu-dobry-cola-05.png" },
-  { name: "Добрый Кола", subtitle: "", category: "Напитки", pickupPrice: 80, deliveryPrice: 125, image: "assets/menu-dobry-cola-033.png" },
-  { name: "Добрый Кола Б/С", subtitle: "", category: "Напитки", pickupPrice: 100, deliveryPrice: 155, image: "assets/menu-dobry-cola-zero-05.png" },
-  { name: "Добрый Апельсин", subtitle: "", category: "Напитки", pickupPrice: 150, deliveryPrice: 235, image: "assets/menu-dobry-orange-1l.png" },
-  { name: "Добрый Апельсин", subtitle: "", category: "Напитки", pickupPrice: 100, deliveryPrice: 155, image: "assets/menu-dobry-orange-05.png" },
-  { name: "Добрый Апельсин", subtitle: "", category: "Напитки", pickupPrice: 80, deliveryPrice: 125, image: "assets/menu-dobry-orange-033.png" },
-  { name: "Лео Груша", subtitle: "", category: "Напитки", pickupPrice: 90, deliveryPrice: 140, image: "assets/menu-leo-pear.png" },
-  { name: "Лео Лимон", subtitle: "", category: "Напитки", pickupPrice: 90, deliveryPrice: 140, image: "assets/menu-leo-lemon.png" },
-  { name: "Лео Тархун", subtitle: "", category: "Напитки", pickupPrice: 90, deliveryPrice: 140, image: "assets/menu-leo-tarhun.png" },
-  { name: "Натахтари Тархун", subtitle: "", category: "Напитки", pickupPrice: 120, deliveryPrice: 185, image: "assets/menu-natakhtari-tarhun.png" },
-  { name: "Натахтари Фейхоа", subtitle: "", category: "Напитки", pickupPrice: 120, deliveryPrice: 185, image: "assets/menu-natakhtari-feijoa.png" },
-  { name: "Палпи Апельсин", subtitle: "", category: "Напитки", pickupPrice: 100, deliveryPrice: 155, image: "assets/menu-pulpy-orange.png" },
-  { name: "Палпи Тропик", subtitle: "", category: "Напитки", pickupPrice: 100, deliveryPrice: 155, image: "assets/menu-pulpy-tropic.png" },
-  { name: "Сок Добрый", subtitle: "Апельсин", category: "Напитки", pickupPrice: 80, deliveryPrice: 125, image: "assets/menu-juice-orange.png" },
-  { name: "Сок Добрый", subtitle: "Томат", category: "Напитки", pickupPrice: 80, deliveryPrice: 125, image: "assets/menu-juice-tomato.png" },
-  { name: "Сок Добрый", subtitle: "Яблоко", category: "Напитки", pickupPrice: 80, deliveryPrice: 125, image: "assets/menu-juice-apple.png" },
-  { name: "Чай Рич Зелёный", subtitle: "", category: "Напитки", pickupPrice: 100, deliveryPrice: 155, image: "assets/menu-rich-tea-green.png" },
-  { name: "Чай Рич Зелёный", subtitle: "Малина", category: "Напитки", pickupPrice: 100, deliveryPrice: 155, image: "assets/menu-rich-tea-green-raspberry.png" },
-  { name: "Чай Рич Зелёный", subtitle: "Манго", category: "Напитки", pickupPrice: 100, deliveryPrice: 155, image: "assets/menu-rich-tea-green-mango.png" },
-  { name: "Чай Рич Чёрный", subtitle: "Лимон", category: "Напитки", pickupPrice: 100, deliveryPrice: 155, image: "assets/menu-rich-tea-black-lemon.png" },
-  { name: "Чай Рич Чёрный", subtitle: "Персик", category: "Напитки", pickupPrice: 100, deliveryPrice: 155, image: "assets/menu-rich-tea-black-peach.png" },
-  { name: "Вода", subtitle: "без газа", category: "Напитки", pickupPrice: 100, deliveryPrice: 155, image: "assets/menu-water-still-05.png" },
-  { name: "Адреналин Раш", subtitle: "", category: "Напитки", pickupPrice: 150, deliveryPrice: null, image: "assets/menu-adrenaline-rush.png" },
-  { name: "Бёрн Энерджи", subtitle: "", category: "Напитки", pickupPrice: 150, deliveryPrice: null, image: "assets/menu-burn-energy.png" },
-  { name: "Флеш Энерджи", subtitle: "", category: "Напитки", pickupPrice: 100, deliveryPrice: null, image: "assets/menu-flash-energy.png" },
-  { name: "Флеш Энерджи", subtitle: "Ультра", category: "Напитки", pickupPrice: 100, deliveryPrice: null, image: "assets/menu-flash-energy-ultra.png" },
+  { name: "Шаурма Большая", subtitle: "", category: "Шаурма", pickupPrice: 290, deliveryPrice: 450, image: "assets/menu-shaurma-big-card.webp" },
+  { name: "Шаурма Мини", subtitle: "", category: "Шаурма", pickupPrice: 240, deliveryPrice: 370, image: "assets/menu-shaurma-mini-card.webp" },
+  { name: "Шаурма Большая", subtitle: "В сырном лаваше", category: "Шаурма", pickupPrice: 300, deliveryPrice: 465, image: "assets/menu-shaurma-big-cheese-card.webp" },
+  { name: "Шаурма Мини", subtitle: "В сырном лаваше", category: "Шаурма", pickupPrice: 250, deliveryPrice: 385, image: "assets/menu-shaurma-mini-cheese-card.webp" },
+  { name: "Донар", subtitle: "", category: "Донар", pickupPrice: 320, deliveryPrice: 495, image: "assets/menu-donar-card.webp" },
+  { name: "Донар", subtitle: "на Тарелке", category: "Донар", pickupPrice: 350, deliveryPrice: 540, image: "assets/menu-donar-plate-card.webp" },
+  { name: "Гирос", subtitle: "Фирменный", category: "Прочее", pickupPrice: 320, deliveryPrice: 495, image: "assets/menu-gyros-card.webp" },
+  { name: "Фахитос", subtitle: "", category: "Прочее", pickupPrice: 320, deliveryPrice: 495, image: "assets/menu-fajitos-card.webp" },
+  { name: "Хот-Дог", subtitle: "", category: "Прочее", pickupPrice: 240, deliveryPrice: 370, image: "assets/menu-hot-dog-card.webp" },
+  { name: "Скепасти", subtitle: "", category: "Прочее", pickupPrice: 400, deliveryPrice: 620, image: "assets/menu-skepasti-card.webp" },
+  { name: "Сендвич", subtitle: "", category: "Прочее", pickupPrice: 320, deliveryPrice: 495, image: "assets/menu-sandwich-card.webp" },
+  { name: "Картошка Фри", subtitle: "", category: "Закуски", pickupPrice: 150, deliveryPrice: 235, image: "assets/menu-fries-card.webp" },
+  { name: "Нагетсы", subtitle: "", category: "Закуски", pickupPrice: 150, deliveryPrice: 235, image: "assets/menu-nuggets-card.webp" },
+  { name: "Сыр", subtitle: "Слайс", category: "Добавки", pickupPrice: 30, deliveryPrice: 45, image: "assets/menu-cheese-card.webp" },
+  { name: "Лук", subtitle: "Маринованный", category: "Добавки", pickupPrice: 30, deliveryPrice: 45, image: "assets/menu-onion-card.webp" },
+  { name: "Огурец", subtitle: "Солёный", category: "Добавки", pickupPrice: 30, deliveryPrice: 45, image: "assets/menu-pickle-card.webp" },
+  { name: "Перец", subtitle: "Халапеньо", category: "Добавки", pickupPrice: 30, deliveryPrice: 45, image: "assets/menu-jalapeno-card.webp" },
+  { name: "Грибы", subtitle: "Шампиньоны", category: "Добавки", pickupPrice: 30, deliveryPrice: 45, image: "assets/menu-mushrooms-card.webp" },
+  { name: "Мясо", subtitle: "Филе куриное", category: "Добавки", pickupPrice: 100, deliveryPrice: 150, image: "assets/menu-meat-card.webp" },
+  { name: "Кетчуп", subtitle: "", category: "Соусы", pickupPrice: 50, deliveryPrice: 65, image: "assets/menu-ketchup-card.webp" },
+  { name: "Сырный соус", subtitle: "", category: "Соусы", pickupPrice: 50, deliveryPrice: 65, image: "assets/menu-cheese-sauce-card.webp" },
+  { name: "Чесночный соус", subtitle: "", category: "Соусы", pickupPrice: 50, deliveryPrice: 65, image: "assets/menu-garlic-sauce-card.webp" },
+  { name: "Кофе", subtitle: "", category: "Напитки", pickupPrice: 50, deliveryPrice: null, image: "assets/menu-coffee-card.webp" },
+  { name: "Чай", subtitle: "", category: "Напитки", pickupPrice: 50, deliveryPrice: null, image: "assets/menu-tea-card.webp" },
+  { name: "Компот Чили", subtitle: "Ягоды", category: "Напитки", pickupPrice: 90, deliveryPrice: 140, image: "assets/menu-compot-berries-card.webp" },
+  { name: "Компот Чили", subtitle: "Сухофрукты", category: "Напитки", pickupPrice: 90, deliveryPrice: 140, image: "assets/menu-compot-dried-fruits-card.webp" },
+  { name: "Тан Чили", subtitle: "Домашний", category: "Напитки", pickupPrice: 110, deliveryPrice: 170, image: "assets/menu-tan-card.webp" },
+  { name: "Добрый Кола", subtitle: "", category: "Напитки", pickupPrice: 150, deliveryPrice: 235, image: "assets/menu-dobry-cola-1l-card.webp" },
+  { name: "Добрый Кола", subtitle: "", category: "Напитки", pickupPrice: 100, deliveryPrice: 155, image: "assets/menu-dobry-cola-05-card.webp" },
+  { name: "Добрый Кола", subtitle: "", category: "Напитки", pickupPrice: 80, deliveryPrice: 125, image: "assets/menu-dobry-cola-033-card.webp" },
+  { name: "Добрый Кола Б/С", subtitle: "", category: "Напитки", pickupPrice: 100, deliveryPrice: 155, image: "assets/menu-dobry-cola-zero-05-card.webp" },
+  { name: "Добрый Апельсин", subtitle: "", category: "Напитки", pickupPrice: 150, deliveryPrice: 235, image: "assets/menu-dobry-orange-1l-card.webp" },
+  { name: "Добрый Апельсин", subtitle: "", category: "Напитки", pickupPrice: 100, deliveryPrice: 155, image: "assets/menu-dobry-orange-05-card.webp" },
+  { name: "Добрый Апельсин", subtitle: "", category: "Напитки", pickupPrice: 80, deliveryPrice: 125, image: "assets/menu-dobry-orange-033-card.webp" },
+  { name: "Лео Груша", subtitle: "", category: "Напитки", pickupPrice: 90, deliveryPrice: 140, image: "assets/menu-leo-pear-card.webp" },
+  { name: "Лео Лимон", subtitle: "", category: "Напитки", pickupPrice: 90, deliveryPrice: 140, image: "assets/menu-leo-lemon-card.webp" },
+  { name: "Лео Тархун", subtitle: "", category: "Напитки", pickupPrice: 90, deliveryPrice: 140, image: "assets/menu-leo-tarhun-card.webp" },
+  { name: "Натахтари Тархун", subtitle: "", category: "Напитки", pickupPrice: 120, deliveryPrice: 185, image: "assets/menu-natakhtari-tarhun-card.webp" },
+  { name: "Натахтари Фейхоа", subtitle: "", category: "Напитки", pickupPrice: 120, deliveryPrice: 185, image: "assets/menu-natakhtari-feijoa-card.webp" },
+  { name: "Палпи Апельсин", subtitle: "", category: "Напитки", pickupPrice: 100, deliveryPrice: 155, image: "assets/menu-pulpy-orange-card.webp" },
+  { name: "Палпи Тропик", subtitle: "", category: "Напитки", pickupPrice: 100, deliveryPrice: 155, image: "assets/menu-pulpy-tropic-card.webp" },
+  { name: "Сок Добрый", subtitle: "Апельсин", category: "Напитки", pickupPrice: 80, deliveryPrice: 125, image: "assets/menu-juice-orange-card.webp" },
+  { name: "Сок Добрый", subtitle: "Томат", category: "Напитки", pickupPrice: 80, deliveryPrice: 125, image: "assets/menu-juice-tomato-card.webp" },
+  { name: "Сок Добрый", subtitle: "Яблоко", category: "Напитки", pickupPrice: 80, deliveryPrice: 125, image: "assets/menu-juice-apple-card.webp" },
+  { name: "Чай Рич Зелёный", subtitle: "", category: "Напитки", pickupPrice: 100, deliveryPrice: 155, image: "assets/menu-rich-tea-green-card.webp" },
+  { name: "Чай Рич Зелёный", subtitle: "Малина", category: "Напитки", pickupPrice: 100, deliveryPrice: 155, image: "assets/menu-rich-tea-green-raspberry-card.webp" },
+  { name: "Чай Рич Зелёный", subtitle: "Манго", category: "Напитки", pickupPrice: 100, deliveryPrice: 155, image: "assets/menu-rich-tea-green-mango-card.webp" },
+  { name: "Чай Рич Чёрный", subtitle: "Лимон", category: "Напитки", pickupPrice: 100, deliveryPrice: 155, image: "assets/menu-rich-tea-black-lemon-card.webp" },
+  { name: "Чай Рич Чёрный", subtitle: "Персик", category: "Напитки", pickupPrice: 100, deliveryPrice: 155, image: "assets/menu-rich-tea-black-peach-card.webp" },
+  { name: "Вода", subtitle: "без газа", category: "Напитки", pickupPrice: 100, deliveryPrice: 155, image: "assets/menu-water-still-05-card.webp" },
+  { name: "Адреналин Раш", subtitle: "", category: "Напитки", pickupPrice: 150, deliveryPrice: null, image: "assets/menu-adrenaline-rush-card.webp" },
+  { name: "Бёрн Энерджи", subtitle: "", category: "Напитки", pickupPrice: 150, deliveryPrice: null, image: "assets/menu-burn-energy-card.webp" },
+  { name: "Флеш Энерджи", subtitle: "", category: "Напитки", pickupPrice: 100, deliveryPrice: null, image: "assets/menu-flash-energy-card.webp" },
+  { name: "Флеш Энерджи", subtitle: "Ультра", category: "Напитки", pickupPrice: 100, deliveryPrice: null, image: "assets/menu-flash-energy-ultra-card.webp" },
 ];
 const DRINK_VOLUMES = new Map([
   ["Кофе||50", "0,2 л"],
@@ -225,6 +225,30 @@ function renderFilters() {
   });
 }
 
+const preloadedMenuImages = new Set();
+
+function preloadMenuImages(items) {
+  items
+    .map((item) => item.image)
+    .filter(Boolean)
+    .forEach((src) => {
+      if (preloadedMenuImages.has(src)) return;
+      preloadedMenuImages.add(src);
+      const image = new Image();
+      image.decoding = "async";
+      image.src = src;
+    });
+}
+
+function scheduleMenuImageWarmup() {
+  const warmup = () => preloadMenuImages(MENU);
+  if ("requestIdleCallback" in window) {
+    window.requestIdleCallback(warmup, { timeout: 2500 });
+  } else {
+    window.setTimeout(warmup, 900);
+  }
+}
+
 function renderMenu(category = "all") {
   const menuList = document.querySelector("#menuList");
   const items =
@@ -236,12 +260,12 @@ function renderMenu(category = "all") {
 
   menuList.innerHTML = items
     .map(
-      (item) => `
+      (item, index) => `
         <article class="menu-item">
           ${
             item.image
               ? `<button class="menu-photo-button" type="button" data-menu-photo="${item.image}" data-menu-photo-alt="${getDishLabel(item)}">
-                  <img src="${item.image}" alt="${getDishLabel(item)}" loading="lazy">
+                  <img src="${item.image}" alt="${getDishLabel(item)}" loading="${index < 6 ? "eager" : "lazy"}" decoding="async" fetchpriority="${index < 2 ? "high" : "auto"}">
                 </button>`
               : `<div class="menu-photo-placeholder" role="img" aria-label="Фото блюда пока не добавлено"><span>Фото скоро</span></div>`
           }
@@ -263,6 +287,8 @@ function renderMenu(category = "all") {
       `,
     )
     .join("");
+
+  preloadMenuImages(items);
 }
 
 function bindFilters() {
@@ -530,6 +556,7 @@ bindAnalytics();
 bindHeroCarousel();
 renderFilters();
 renderMenu("popular");
+scheduleMenuImageWarmup();
 bindFilters();
 bindReviewControls();
 bindMenuPhotoModal();

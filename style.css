@@ -387,12 +387,16 @@ h2 {
 }
 
 .order-card small {
-  color: currentColor;
+  color: rgba(255, 239, 221, 0.62);
   opacity: 1;
-  font-size: 0.68rem;
+  font-size: 0.65rem;
   font-weight: 600;
   line-height: 1.12;
   text-shadow: inherit;
+}
+
+.order-card-primary small {
+  color: rgba(23, 23, 23, 0.68);
 }
 
 .order-card:hover,
@@ -1022,7 +1026,7 @@ body.menu-photo-modal-open {
   }
 
   .order-card small {
-    font-size: 0.66rem;
+    font-size: 0.63rem;
     line-height: 1.15;
     max-width: 110px;
     text-align: center;
