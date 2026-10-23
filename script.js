@@ -1,9 +1,18 @@
 ﻿/*
   Где менять данные:
   1. Ссылки меняются в объекте LINKS.
-  2. Меню и цены меняются в массиве MENU.
+  2. Меню и цены меняются через локальную панель (menu.json).
   3. Фото блюд меняются в поле image. Файлы лежат в assets.
 */
+(function startChilliSite() {
+  // An older cached index may not yet include the new menu data script.
+  if (!window.CHILLI_MENU_DATA) {
+    const loader = document.createElement("script");
+    loader.src = "menu-data.js";
+    loader.onload = startChilliSite;
+    document.head.append(loader);
+    return;
+  }
 const LINKS = {
   delivery: "https://eda.yandex.ru/r/saurma_chilli",
   pickup: "https://2gis.ru/krasnodar/branches/70000001055983784",
@@ -23,74 +32,9 @@ const LINK_GOALS = {
   whatsapp: "click_whatsapp",
 };
 
-const MENU = [
-  { name: "Шаурма Большая", subtitle: "", volume: "490 гр", category: "Шаурма", pickupPrice: 300, deliveryPrice: 465, image: "assets/menu-shaurma-big-card.webp" },
-  { name: "Шаурма Мини", subtitle: "", volume: "350 гр", category: "Шаурма", pickupPrice: 250, deliveryPrice: 385, image: "assets/menu-shaurma-mini-card.webp" },
-  { name: "Шаурма Большая", subtitle: "В сырном лаваше", volume: "490 гр", category: "Шаурма", pickupPrice: 310, deliveryPrice: 480, image: "assets/menu-shaurma-big-cheese-card.webp" },
-  { name: "Шаурма Мини", subtitle: "В сырном лаваше", volume: "350 гр", category: "Шаурма", pickupPrice: 260, deliveryPrice: 400, image: "assets/menu-shaurma-mini-cheese-card.webp" },
-  { name: "Донар", subtitle: "", volume: "485 гр", category: "Донар", pickupPrice: 330, deliveryPrice: 510, image: "assets/menu-donar-card.webp" },
-  { name: "Донар", subtitle: "на Тарелке", volume: "500 гр", category: "Донар", pickupPrice: 360, deliveryPrice: 555, image: "assets/menu-donar-plate-card.webp" },
-  { name: "Гирос", subtitle: "Фирменный", volume: "410 гр", category: "Прочее", pickupPrice: 330, deliveryPrice: 510, image: "assets/menu-gyros-card.webp" },
-  { name: "Фахитос", subtitle: "", volume: "400 гр", category: "Прочее", pickupPrice: 330, deliveryPrice: 510, image: "assets/menu-fajitos-card.webp" },
-  { name: "Хот-Дог", subtitle: "", volume: "265 гр", category: "Прочее", pickupPrice: 250, deliveryPrice: 385, image: "assets/menu-hot-dog-card.webp" },
-  { name: "Скепасти", subtitle: "", volume: "530 гр", category: "Прочее", pickupPrice: 410, deliveryPrice: 635, image: "assets/menu-skepasti-card.webp" },
-  { name: "Сендвич", subtitle: "", volume: "310 гр", category: "Прочее", pickupPrice: 330, deliveryPrice: 510, image: "assets/menu-sandwich-card.webp" },
-  { name: "Картошка Фри", subtitle: "", volume: "110 гр", category: "Закуски", pickupPrice: 150, deliveryPrice: 235, image: "assets/menu-fries-card.webp" },
-  { name: "Нагетсы", subtitle: "", volume: "110 гр", category: "Закуски", pickupPrice: 150, deliveryPrice: 235, image: "assets/menu-nuggets-card.webp" },
-  { name: "Сыр", subtitle: "Слайс", volume: "20 гр", category: "Добавки", pickupPrice: 30, deliveryPrice: 45, image: "assets/menu-cheese-card.webp" },
-  { name: "Лук", subtitle: "Маринованный", volume: "25 гр", category: "Добавки", pickupPrice: 30, deliveryPrice: 45, image: "assets/menu-onion-card.webp" },
-  { name: "Огурец", subtitle: "Солёный", volume: "25 гр", category: "Добавки", pickupPrice: 30, deliveryPrice: 45, image: "assets/menu-pickle-card.webp" },
-  { name: "Перец", subtitle: "Халапеньо", volume: "20 гр", category: "Добавки", pickupPrice: 30, deliveryPrice: 45, image: "assets/menu-jalapeno-card.webp" },
-  { name: "Грибы", subtitle: "Шампиньоны", volume: "25 гр", category: "Добавки", pickupPrice: 30, deliveryPrice: 45, image: "assets/menu-mushrooms-card.webp" },
-  { name: "Мясо", subtitle: "Филе куриное", volume: "50 гр", category: "Добавки", pickupPrice: 100, deliveryPrice: 150, image: "assets/menu-meat-card.webp" },
-  { name: "Кетчуп", subtitle: "", volume: "25 гр", category: "Соусы", pickupPrice: 40, deliveryPrice: 65, image: "assets/menu-ketchup-card.webp" },
-  { name: "Сырный соус", subtitle: "", volume: "25 гр", category: "Соусы", pickupPrice: 40, deliveryPrice: 65, image: "assets/menu-cheese-sauce-card.webp" },
-  { name: "Чесночный соус", subtitle: "", volume: "25 гр", category: "Соусы", pickupPrice: 40, deliveryPrice: 65, image: "assets/menu-garlic-sauce-card.webp" },
-  { name: "Кофе", subtitle: "", volume: "0,2 л", category: "Напитки", pickupPrice: 50, deliveryPrice: null, image: "assets/menu-coffee-card.webp" },
-  { name: "Чай", subtitle: "", volume: "0,2 л", category: "Напитки", pickupPrice: 50, deliveryPrice: null, image: "assets/menu-tea-card.webp" },
-  { name: "Компот Чили", subtitle: "Ягоды", volume: "0,5 л", category: "Напитки", pickupPrice: 90, deliveryPrice: 140, image: "assets/menu-compot-berries-card.webp" },
-  { name: "Компот Чили", subtitle: "Сухофрукты", volume: "0,5 л", category: "Напитки", pickupPrice: 90, deliveryPrice: 140, image: "assets/menu-compot-dried-fruits-card.webp" },
-  { name: "Тан Чили", subtitle: "Домашний", volume: "0,5 л", category: "Напитки", pickupPrice: 110, deliveryPrice: 170, image: "assets/menu-tan-card.webp" },
-  { name: "Добрый Кола", subtitle: "", volume: "1 л", category: "Напитки", pickupPrice: 150, deliveryPrice: 235, image: "assets/menu-dobry-cola-1l-card.webp" },
-  { name: "Добрый Кола", subtitle: "", volume: "0,5 л", category: "Напитки", pickupPrice: 100, deliveryPrice: 155, image: "assets/menu-dobry-cola-05-card.webp" },
-  { name: "Добрый Кола", subtitle: "", volume: "0,33 л", category: "Напитки", pickupPrice: 90, deliveryPrice: 140, image: "assets/menu-dobry-cola-033-card.webp" },
-  { name: "Добрый Кола Б/С", subtitle: "", volume: "0,5 л", category: "Напитки", pickupPrice: 100, deliveryPrice: 155, image: "assets/menu-dobry-cola-zero-05-card.webp" },
-  { name: "Добрый Апельсин", subtitle: "", volume: "1 л", category: "Напитки", pickupPrice: 150, deliveryPrice: 235, image: "assets/menu-dobry-orange-1l-card.webp" },
-  { name: "Добрый Апельсин", subtitle: "", volume: "0,5 л", category: "Напитки", pickupPrice: 100, deliveryPrice: 155, image: "assets/menu-dobry-orange-05-card.webp" },
-  { name: "Добрый Апельсин", subtitle: "", volume: "0,33 л", category: "Напитки", pickupPrice: 90, deliveryPrice: 140, image: "assets/menu-dobry-orange-033-card.webp" },
-  { name: "Лео Груша", subtitle: "", volume: "0,5 л", category: "Напитки", pickupPrice: 90, deliveryPrice: 140, image: "assets/menu-leo-pear-card.webp" },
-  { name: "Лео Лимон", subtitle: "", volume: "0,5 л", category: "Напитки", pickupPrice: 90, deliveryPrice: 140, image: "assets/menu-leo-lemon-card.webp" },
-  { name: "Лео Тархун", subtitle: "", volume: "0,5 л", category: "Напитки", pickupPrice: 90, deliveryPrice: 140, image: "assets/menu-leo-tarhun-card.webp" },
-  { name: "Натахтари Тархун", subtitle: "", volume: "0,5 л", category: "Напитки", pickupPrice: 130, deliveryPrice: 200, image: "assets/menu-natakhtari-tarhun-card.webp" },
-  { name: "Натахтари Фейхоа", subtitle: "", volume: "0,5 л", category: "Напитки", pickupPrice: 130, deliveryPrice: 200, image: "assets/menu-natakhtari-feijoa-card.webp" },
-  { name: "Палпи Апельсин", subtitle: "", volume: "0,45 л", category: "Напитки", pickupPrice: 100, deliveryPrice: 155, image: "assets/menu-pulpy-orange-card.webp" },
-  { name: "Палпи Тропик", subtitle: "", volume: "0,45 л", category: "Напитки", pickupPrice: 100, deliveryPrice: 155, image: "assets/menu-pulpy-tropic-card.webp" },
-  { name: "Сок Добрый", subtitle: "Апельсин", volume: "0,3 л", category: "Напитки", pickupPrice: 90, deliveryPrice: 140, image: "assets/menu-juice-orange-card.webp" },
-  { name: "Сок Добрый", subtitle: "Томат", volume: "0,3 л", category: "Напитки", pickupPrice: 90, deliveryPrice: 140, image: "assets/menu-juice-tomato-card.webp" },
-  { name: "Сок Добрый", subtitle: "Яблоко", volume: "0,3 л", category: "Напитки", pickupPrice: 90, deliveryPrice: 140, image: "assets/menu-juice-apple-card.webp" },
-  { name: "Чай Рич Зелёный", subtitle: "", volume: "0,5 л", category: "Напитки", pickupPrice: 100, deliveryPrice: 155, image: "assets/menu-rich-tea-green-card.webp" },
-  { name: "Чай Рич Зелёный", subtitle: "Малина", volume: "0,5 л", category: "Напитки", pickupPrice: 100, deliveryPrice: 155, image: "assets/menu-rich-tea-green-raspberry-card.webp" },
-  { name: "Чай Рич Зелёный", subtitle: "Манго", volume: "0,5 л", category: "Напитки", pickupPrice: 100, deliveryPrice: 155, image: "assets/menu-rich-tea-green-mango-card.webp" },
-  { name: "Чай Рич Чёрный", subtitle: "Лимон", volume: "0,5 л", category: "Напитки", pickupPrice: 100, deliveryPrice: 155, image: "assets/menu-rich-tea-black-lemon-card.webp" },
-  { name: "Чай Рич Чёрный", subtitle: "Персик", volume: "0,5 л", category: "Напитки", pickupPrice: 100, deliveryPrice: 155, image: "assets/menu-rich-tea-black-peach-card.webp" },
-  { name: "Вода", subtitle: "без газа", volume: "0,5 л", category: "Напитки", pickupPrice: 50, deliveryPrice: 80, image: "assets/menu-water-still-05-card.webp" },
-  { name: "Адреналин Раш", subtitle: "", volume: "0,45 л", category: "Напитки", pickupPrice: 150, deliveryPrice: null, image: "assets/menu-adrenaline-rush-card.webp" },
-  { name: "Бёрн Энерджи", subtitle: "", volume: "0,45 л", category: "Напитки", pickupPrice: 150, deliveryPrice: null, image: "assets/menu-burn-energy-card.webp" },
-  { name: "Флеш Энерджи", subtitle: "", volume: "0,45 л", category: "Напитки", pickupPrice: 100, deliveryPrice: null, image: "assets/menu-flash-energy-card.webp" },
-  { name: "Флеш Энерджи", subtitle: "Ультра", volume: "0,45 л", category: "Напитки", pickupPrice: 100, deliveryPrice: null, image: "assets/menu-flash-energy-ultra-card.webp" },
-];
-const POPULAR_ITEMS = [
-  "Шаурма Большая",
-  "Шаурма Мини В сырном лаваше",
-  "Донар",
-  "Гирос Фирменный",
-  "Хот-Дог",
-  "Картошка Фри",
-  "Перец Халапеньо",
-  "Добрый Кола 0,5 л",
-  "Добрый Апельсин 0,5 л",
-  "Флеш Энерджи 0,45 л",
-];
+const MENU_DATA = window.CHILLI_MENU_DATA;
+const MENU = MENU_DATA.items.filter((item) => item.visible);
+const POPULAR_ITEMS = new Set(MENU.filter((item) => item.popular).map((item) => item.id));
 
 const HERO_IMAGES = [
   "assets/hero-cover-1.png",
@@ -122,7 +66,11 @@ function getDishLabel(item) {
 function formatDishName(item) {
   const subtitle = formatDishSubtitle(item);
   const name = item.category === "Добавки" ? `${item.name} (добавка)` : item.name;
-  return `${name}${subtitle ? `<span class="dish-subtitle">${subtitle}</span>` : ""}`;
+  return `${escapeHtml(name)}${subtitle ? `<span class="dish-subtitle">${escapeHtml(subtitle)}</span>` : ""}`;
+}
+
+function escapeHtml(value) {
+  return String(value).replace(/[&<>"']/g, (char) => ({'&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;'}[char]));
 }
 
 function bindLinks() {
@@ -174,7 +122,7 @@ function bindAnalytics() {
 
 function renderFilters() {
   const toolbar = document.querySelector(".menu-toolbar");
-  const categories = [...new Set(MENU.map((item) => item.category))];
+  const categories = MENU_DATA.categories.filter((category) => MENU.some((item) => item.category === category));
 
   categories.forEach((category) => {
     const button = document.createElement("button");
@@ -214,7 +162,7 @@ function renderMenu(category = "all") {
   const menuList = document.querySelector("#menuList");
   const items =
     category === "popular"
-      ? MENU.filter((item) => POPULAR_ITEMS.includes(getDishLabel(item)))
+      ? MENU.filter((item) => POPULAR_ITEMS.has(item.id))
       : category === "all"
         ? MENU
         : MENU.filter((item) => item.category === category);
@@ -225,20 +173,20 @@ function renderMenu(category = "all") {
         <article class="menu-item">
           ${
             item.image
-              ? `<button class="menu-photo-button" type="button" data-menu-photo="${item.image}" data-menu-photo-alt="${getDishLabel(item)}">
-                  <img src="${item.image}" alt="${getDishLabel(item)}" loading="${index < 6 ? "eager" : "lazy"}" decoding="async" fetchpriority="${index < 2 ? "high" : "auto"}">
+              ? `<button class="menu-photo-button" type="button" data-menu-photo="${escapeHtml(item.image)}" data-menu-photo-alt="${escapeHtml(getDishLabel(item))}">
+                  <img src="${escapeHtml(item.image)}" alt="${escapeHtml(getDishLabel(item))}" loading="${index < 6 ? "eager" : "lazy"}" decoding="async" fetchpriority="${index < 2 ? "high" : "auto"}">
                 </button>`
               : `<div class="menu-photo-placeholder" role="img" aria-label="Фото блюда пока не добавлено"><span>Фото скоро</span></div>`
           }
           <div class="menu-item-body">
-            ${POPULAR_ITEMS.includes(getDishLabel(item)) ? `<span class="dish-badge">Хит</span>` : ""}
+            ${POPULAR_ITEMS.has(item.id) ? `<span class="dish-badge">Хит</span>` : ""}
             <h3>${formatDishName(item)}</h3>
             <div class="price-row">
-              <a class="price" data-link="pickup" data-dish="${getDishLabel(item)}" href="${LINKS.pickup}" target="_blank" rel="noopener">
+              <a class="price" data-link="pickup" data-dish="${escapeHtml(getDishLabel(item))}" href="${LINKS.pickup}" target="_blank" rel="noopener">
                 <small>Самовывоз</small>
                 <strong>${formatPrice(item.pickupPrice)}</strong>
               </a>
-              <a class="price" data-link="delivery" data-dish="${getDishLabel(item)}" href="${LINKS.delivery}" target="_blank" rel="noopener">
+              <a class="price" data-link="delivery" data-dish="${escapeHtml(getDishLabel(item))}" href="${LINKS.delivery}" target="_blank" rel="noopener">
                 <small>Яндекс Еда</small>
                 <strong>${formatPrice(item.deliveryPrice)}</strong>
               </a>
@@ -521,6 +469,7 @@ scheduleMenuImageWarmup();
 bindFilters();
 bindReviewControls();
 bindMenuPhotoModal();
+})();
 
 
 
