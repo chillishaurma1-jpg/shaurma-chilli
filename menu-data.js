@@ -242,7 +242,7 @@ window.CHILLI_MENU_DATA = {
     {
       "id": "dish-20",
       "name": "Соус",
-      "subtitle": "Сырный, Кетчуп, Чесночный",
+      "subtitle": "Сырный/Кетчуп/Чесночный",
       "volume": "25 гр",
       "category": "Добавки",
       "pickupPrice": 40,
